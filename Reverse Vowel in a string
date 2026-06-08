@@ -1,0 +1,32 @@
+reverse vowel in a string 
+
+code 
+class Solution {
+public:
+    bool checkVowel(char & ch){
+        
+            if(ch=='A' || ch=='E' || ch=='I'|| ch=='O' ||ch=='U' || ch=='a'|| ch=='e'|| ch=='i'|| ch=='o'|| ch=='u') return true;
+        
+        return false;
+    }
+    string reverseVowels(string s) {
+        int n=s.size();
+        int left=0,right=n;
+        for(int i=0;i<=n;i++){
+            while(left<right){
+            if(checkVowel(s[left]) && checkVowel(s[right])){
+                swap(s[left],s[right]);
+                right--;
+                left++;
+            }
+           else if(checkVowel(s[left])){
+            right--;
+           }
+           else{
+            left++;
+           }
+        }
+        }return s;
+
+    }
+};

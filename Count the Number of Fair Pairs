@@ -1,0 +1,32 @@
+
+Count the Number of Fair Pairs
+
+class Solution {
+public:
+typedef long long ll;
+        long long countMost(vector<int>&nums,long long Y){
+            ll cnt=0;
+            int i=0;
+            int j=nums.size()-1;
+            while(i<j){
+                if((long long )nums[i]+nums[j]<=Y){
+                    cnt+=j-i;
+                    i++;
+                }
+                else{
+                    j--;
+                }
+            }
+            return cnt;
+        }
+
+
+
+
+
+    long long countFairPairs(vector<int>& nums, int lower, int upper) {
+        sort(nums.begin(),nums.end());
+        ll  fair=countMost(nums,upper)-countMost(nums, (long long )lower-1);
+        return fair;
+    }
+};

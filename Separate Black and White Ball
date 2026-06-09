@@ -1,0 +1,21 @@
+
+Separate Black and White Ball
+
+code 
+class Solution {
+public:
+typedef long long ll;
+    long long minimumSteps(string s) {
+    ll ans=0;
+    ll ones=0;
+    for(char c :s){
+        if(c=='1'){
+            ones++;
+        }
+        else {
+            ans+=ones;
+        }
+    }
+    return ans;
+    }
+};
